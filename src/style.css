@@ -1,7 +1,29 @@
-body {
-  background-color: bisque;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  color: blue;
+.container {
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+}
+
+.scores {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.scores button {
+  display: inline;
+}
+
+.addScore {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.addScore input {
+  display: block;
 }
