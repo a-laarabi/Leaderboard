@@ -38,9 +38,10 @@ body {
 
 .refresh {
   margin-left: 30px;
-  padding:0 10px;
+  padding: 0 10px;
   background: none;
   box-shadow: 2px 2px 2px black;
+  cursor: pointer;
 }
 
 .listScores {
@@ -50,11 +51,7 @@ body {
   margin-top: 20px;
 }
 
-.listScores {
-  /* box-shadow: 2px 2px 2px black; */
-}
-
-.listScores div{
+.listScores div {
   padding: 10px;
 }
 
@@ -69,7 +66,7 @@ body {
   grid-column-end: 5;
 }
 
-.addScore .form {
+.addScore .inputForm {
   display: block;
   margin-top: 20px;
   width: 100%;
@@ -89,4 +86,5 @@ body {
   margin-left: 70%;
   background: none;
   box-shadow: 2px 2px 2px black;
+  cursor: pointer;
 }
