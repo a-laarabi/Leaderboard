@@ -13,21 +13,26 @@
   </header>
   <section class="container">
     <section class="scores">
-      <h1>Recent scores</h1>
-      <button>Refresh</button>
+      <div class="scoresHeader">
+        <h1>Recent scores</h1>
+        <button class="refresh">Refresh</button>
+      </div>
       <div class="listScores">
-        
+        <div><p>Anas: 100</p></div>
+        <div><p>A: 85</p></div>
+        <div><p>B: 70</p></div>
       </div>
     </section>
       
     <section class="addScore">
       <h1>Add your score</h1>
-      <form action="">
-        <input type="text">
-        <input type="text">
-        <input type="button" value="Submit">
+      <form class="form">
+        <input class="form name" type="text" placeholder="Your name" required>
+        <input class="form score" type="text" placeholder="Your score" required>
+        <input class="submit" type="button" value="Submit">
       </form>
     </section>
   </section>
+  <script src="./index.js"></script>
 </body>
 </html>

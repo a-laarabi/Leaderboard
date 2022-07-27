@@ -1,12 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Arima', cursive;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 10% 40% 40% 10%;
+.logo {
+  margin-left: 40px;
+  margin-top: 60px;
 }
+
+.container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 10% 45% 10% 25% 10%;
+}
+
+/* ########## Scores ########## */
 
 .scores {
   grid-column-start: 2;
@@ -17,13 +31,62 @@
   display: inline;
 }
 
-.addScore {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  /* display: flex; */
-  /* flex-direction: column; */
+.scoresHeader {
+  display: flex;
+  flex-direction: row;
 }
 
-.addScore input {
+.refresh {
+  margin-left: 30px;
+  padding:0 10px;
+  background: none;
+  box-shadow: 2px 2px 2px black;
+}
+
+.listScores {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.listScores {
+  /* box-shadow: 2px 2px 2px black; */
+}
+
+.listScores div{
+  padding: 10px;
+}
+
+.listScores div:nth-child(odd) {
+  background-color: rgb(205, 197, 197);
+}
+
+/* ########## addScore ########## */
+
+.addScore {
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.addScore .form {
   display: block;
+  margin-top: 20px;
+  width: 100%;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+::placeholder {
+  font-family: 'Arima', cursive;
+  color: #000;
+}
+
+.submit {
+  display: block;
+  margin-top: 20px;
+  padding: 5px 10px;
+  margin-left: 70%;
+  background: none;
+  box-shadow: 2px 2px 2px black;
 }
