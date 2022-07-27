@@ -1,5 +1,5 @@
 import './style.css';
-import {Player} from './__modules__/player.js';
+import Player from './__modules__/player.js';
 
 let scoresList;
 
