@@ -1,11 +1,6 @@
 import './style.css';
+import {Player} from './__modules__/player.js';
 
-class Player {
-  constructor(name, score) {
-    this.name = name;
-    this.score = score;
-  }
-}
 let scoresList;
 
 if (localStorage.length === 0) {
