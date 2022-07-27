@@ -1,13 +1,9 @@
 import './style.css';
-import Player from './__modules__/player.js';
+import { postPlayer } from './__modules__/api.js';
 
-let scoresList;
-
-if (localStorage.length === 0) {
-  scoresList = [];
-} else {
-  scoresList = JSON.parse(localStorage.getItem('items'));
-}
+const names = document.querySelector('.name');
+const score = document.querySelector('.score');
+const submit = document.querySelector('.submit');
 
 const listScores = document.querySelector('.listScores');
 
@@ -17,33 +13,26 @@ const addToDom = (name, score) => {
   listScores.appendChild(player);
 };
 
-const getPlayerFromStorage = () => {
-  if (localStorage.length) {
-    const localItem = localStorage.getItem('items');
-    const items = JSON.parse(localItem);
-    items.forEach((element) => {
-      addToDom(element.name, element.score);
-    });
-  }
-};
-
-const addNewScore = (name, score) => {
-  addToDom(name, score);
-  const newPlayer = new Player(name, score);
-  scoresList.push(newPlayer);
-  localStorage.setItem('items', JSON.stringify(scoresList));
-};
-
-const names = document.querySelector('.name');
-const score = document.querySelector('.score');
-const submit = document.querySelector('.submit');
+const listAllPlayers = async () => {
+  const response = await fetch("https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7CEoFTu437FqyLNIZWMY/scores/");
+  const data = await response.json();
+  data.result.forEach(element => {
+    addToDom(element.user, element.score);
+  });
+}
 
 submit.addEventListener('click', () => {
   if (names.value !== '' && score.value !== '') {
-    addNewScore(names.value, score.value);
+    postPlayer();
     names.value = null;
     score.value = null;
   }
 });
 
-window.addEventListener('load', getPlayerFromStorage);
+const refresh = document.querySelector('.refresh');
+refresh.addEventListener('click', () => {
+  listScores.innerHTML = '';
+  listAllPlayers();
+});
+
+window.addEventListener('load', listAllPlayers);
