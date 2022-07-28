@@ -9,11 +9,11 @@ const postPlayer = async () => {
     },
     body: JSON.stringify({
       user: names.value,
-      score: score.value
-    })
+      score: score.value,
+    }),
   });
   const listPlayers = await response.json();
   return listPlayers;
 };
 
-export { postPlayer };
+export default postPlayer;
