@@ -2,6 +2,8 @@
 
 body {
   font-family: 'Arima', cursive;
+  background-image: url('./img/2217435.webp');
+  background-size: auto auto;
 }
 
 * {
@@ -9,9 +11,30 @@ body {
   padding: 0;
 }
 
-.logo {
-  margin-left: 40px;
+ul {
+  list-style: none;
+}
+
+h2 {
+  color: #fff;
+}
+
+.boardHeader {
+  display: flex;
+  gap: 5%;
   margin-top: 60px;
+  justify-content: center;
+}
+
+.crown {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.logo {
+  text-align: center;
+  color: #fff;
+  font-size: 4em;
 }
 
 .container {
@@ -39,13 +62,14 @@ body {
 .refresh {
   margin-left: 30px;
   padding: 0 10px;
-  background: none;
-  box-shadow: 2px 2px 2px black;
+  background: #fa86c4;
+  box-shadow: 2px 2px 2px #e11584;
   cursor: pointer;
+  border-color: #ff1694;
 }
 
 .listScores {
-  border: 2px solid black;
+  border: 2px solid #ff1694;
   border-radius: 5px;
   width: 100%;
   margin-top: 20px;
@@ -55,8 +79,34 @@ body {
   padding: 10px;
 }
 
-.listScores div:nth-child(odd) {
-  background-color: rgb(205, 197, 197);
+.listScores ul:nth-child(even) {
+  background-color: #e6ebe0;
+}
+
+.listScores ul:nth-child(odd) {
+  background-color: #f2b8c6;
+}
+
+.playerScoreList {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 20%;
+  position: relative;
+}
+
+.user {
+  width: 20px;
+  margin-left: 20px;
+}
+
+.playerName {
+  margin-left: 10%;
+}
+
+.playerScore {
+  position: absolute;
+  right: 50px;
 }
 
 /* ########## addScore ########## */
@@ -84,7 +134,41 @@ body {
   margin-top: 20px;
   padding: 5px 10px;
   margin-left: 70%;
-  background: none;
-  box-shadow: 2px 2px 2px black;
   cursor: pointer;
+  background: #fa86c4;
+  box-shadow: 2px 2px 2px #e11584;
+  border-color: #ff1694;
+}
+
+@media (max-width: 768px) {
+  .crown {
+    width: 40px;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .addScore {
+    margin-top: 50px;
+  }
+
+  .form {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  .sectionTitle {
+    margin-left: 20px;
+  }
+
+  .listScores {
+    width: 90%;
+    margin: 20px auto;
+  }
 }
