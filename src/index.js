@@ -1,5 +1,6 @@
 import './style.css';
 import postPlayer from './__modules__/api.js';
+import userProfile from './img/149071.png';
 
 const names = document.querySelector('.name');
 const score = document.querySelector('.score');
@@ -8,8 +9,13 @@ const submit = document.querySelector('.submit');
 const listScores = document.querySelector('.listScores');
 
 const addToDom = (name, score) => {
-  const player = document.createElement('div');
-  player.innerHTML += `<p>${name}: ${score}</p>`;
+  const player = document.createElement('ul');
+  player.classList.add('playerScoreList');
+  player.innerHTML += `
+    <li><img class="user" src="${userProfile}" alt="user profile"></li>
+    <li class="playerName">${name}</li>
+    <li class="playerScore">${score}</li>
+  `;
   listScores.appendChild(player);
 };
 

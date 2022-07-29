@@ -8,19 +8,24 @@
 </head>
 <body>
   <header>
-    <h1 class="logo">Leaderboard</h1>
+    <ul class="boardHeader">
+      <li><img class="crown" src="../crown-png.webp" alt="crown"></li>
+      <li><h1 class="logo">Leaderboard</h1></li>
+      <li><img class="crown" src="../crown-png.webp" alt="crown"></li>
+    </ul>
+    
   </header>
   <section class="container">
     <section class="scores">
       <div class="scoresHeader">
-        <h2>Recent scores</h2>
+        <h2 class="sectionTitle">Recent scores</h2>
         <button class="refresh">Refresh</button>
       </div>
       <div class="listScores"></div>
     </section>
       
     <section class="addScore">
-      <h2>Add your score</h2>
+      <h2 class="sectionTitle">Add your score</h2>
       <form class="form">
         <input class="inputForm name" type="text" placeholder="Your name" required>
         <input class="inputForm score" type="text" placeholder="Your score" required>
