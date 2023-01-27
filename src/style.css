@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Arima', cursive;
-  background-image: url('./img/2217435.webp');
+  /* background-image: url('./img/2217435.webp'); */
   background-size: auto auto;
 }
 
@@ -16,7 +16,7 @@ ul {
 }
 
 h2 {
-  color: #fff;
+  /* color: #fff; */
 }
 
 .boardHeader {
@@ -33,7 +33,7 @@ h2 {
 
 .logo {
   text-align: center;
-  color: #fff;
+  /* color: #fff; */
   font-size: 4em;
 }
 
@@ -171,4 +171,16 @@ h2 {
     width: 90%;
     margin: 20px auto;
   }
+}
+
+/* Chrome */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: none;
 }
