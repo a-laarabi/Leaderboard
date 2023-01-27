@@ -22,6 +22,7 @@ const addToDom = (name, score) => {
 const listAllPlayers = async () => {
   const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7CEoFTu437FqyLNIZWMY/scores/');
   const data = await response.json();
+  data.result.sort((a,b) => b.score - a.score);
   data.result.forEach((element) => {
     addToDom(element.user, element.score);
   });
