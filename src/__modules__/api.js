@@ -9,7 +9,7 @@ const postPlayer = async () => {
     },
     body: JSON.stringify({
       user: names.value,
-      score: parseInt(score.value),
+      score: parseInt(score.value, 10),
     }),
   });
   const listPlayers = await response.json();
