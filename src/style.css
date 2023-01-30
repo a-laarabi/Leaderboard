@@ -1,23 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima:wght@100;200;300;400;500;600;700&display=swap');
 
-body {
-  font-family: 'Arima', cursive;
-  /* background-image: url('./img/2217435.webp'); */
-  background-size: auto auto;
-}
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arima', cursive !important;
+  background: linear-gradient(136deg, rgb(68, 132, 206), rgb(26, 215, 192), rgb(255, 155, 17), rgb(155, 89, 182), rgb(255, 127, 127), rgb(236, 240, 241)) 0% 0% / 1200% 1200%;
+  min-height: 100vh;
+  background-size: 1000% 1000%;
+  animation: BackgroundAnimation 70s ease infinite;
+  height: 100%;
 }
 
 ul {
   list-style: none;
 }
 
-h2 {
-  /* color: #fff; */
-}
+/* ########## header ########## */
 
 .boardHeader {
   display: flex;
@@ -32,146 +34,150 @@ h2 {
 }
 
 .logo {
-  text-align: center;
-  /* color: #fff; */
   font-size: 4em;
 }
 
-.container {
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: 10% 45% 10% 25% 10%;
+/* ########## legend ########## */
+
+.legend {
+  position: relative;
+  height: 35vh;
 }
+.legend ul {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0;
+}
+.legend ul:nth-child(1) {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.legend ul:nth-child(1) img {
+  width: 90%;
+  max-width: 150px;
+}
+
+.legend ul:nth-child(2) {
+  top: 30%;
+  left: 20%;
+}
+
+.legend ul:nth-child(3) {
+  top: 35%;
+  right: 20%;
+}
+
+.legend ul:nth-child(2) img,
+.legend ul:nth-child(3) img
+ {
+  width: 70%;
+  max-width: 150px;
+}
+
+.legend ul img {
+  border-radius: 50%;
+}
+
+
 
 /* ########## Scores ########## */
 
-.scores {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-.scores button {
-  display: inline;
+.listScores {
+  margin-top: 20px;
 }
 
 .scoresHeader {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .refresh {
-  margin-left: 30px;
   padding: 0 10px;
-  background: #fa86c4;
-  box-shadow: 2px 2px 2px #e11584;
+  background: transparent;
   cursor: pointer;
-  border-color: #ff1694;
+  border-color: #000;
+  border-radius: 20px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4);
+  transition: all .8s ease;
 }
 
-.listScores {
-  border: 2px solid #ff1694;
-  border-radius: 5px;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.listScores div {
-  padding: 10px;
-}
-
-.listScores ul:nth-child(even) {
-  background-color: #e6ebe0;
-}
-
-.listScores ul:nth-child(odd) {
-  background-color: #f2b8c6;
+.refresh:hover {
+  background: #000;
+  color: #fff;
 }
 
 .playerScoreList {
   display: flex;
   align-items: center;
-  height: 40px;
-  gap: 20%;
-  position: relative;
+  justify-content: space-between;
+  min-height: 60px;
+  background: rgb(243 199 199 / 15%);
+  border-radius: 50px;
+  padding: 0 30px;
+  margin-right: 20px;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
-.user {
-  width: 20px;
-  margin-left: 20px;
+.userProfile {
+  width: 60px;
+  margin-left: -30px;
+  border-radius: 50%;
 }
 
-.playerName {
-  margin-left: 10%;
-}
-
-.playerScore {
-  position: absolute;
-  right: 50px;
-}
-
-/* ########## addScore ########## */
-
-.addScore {
-  grid-column-start: 4;
-  grid-column-end: 5;
-}
+/* ########## form ########## */
 
 .addScore .inputForm {
-  display: block;
-  margin-top: 20px;
+  margin-bottom: 20px;
   width: 100%;
   padding: 5px;
-  border: 2px solid black;
+  border: none;
+  border-bottom: 2px solid black;
+  background: none;
+  outline: none;
 }
 
-::placeholder {
-  font-family: 'Arima', cursive;
-  color: #000;
+.inputDiv {
+  position: relative;
+  margin-bottom: 20px;
+
+}
+
+.form label {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.form input:focus ~ label,
+.form input:valid ~ label {
+  top: -10px;
+  left: 0;
+  font-size: .9rem;
+  color: #c07c32;
 }
 
 .submit {
-  display: block;
-  margin-top: 20px;
   padding: 5px 10px;
-  margin-left: 70%;
-  cursor: pointer;
-  background: #fa86c4;
-  box-shadow: 2px 2px 2px #e11584;
-  border-color: #ff1694;
+  background: transparent;
+  border-radius: 15px;
+  border-color: #000;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4);
+  transition: all .8s ease;
 }
 
-@media (max-width: 768px) {
-  .crown {
-    width: 40px;
-  }
-
-  .logo {
-    font-size: 2rem;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .addScore {
-    margin-top: 50px;
-  }
-
-  .form {
-    width: 50%;
-    margin-left: 25%;
-  }
-
-  .sectionTitle {
-    margin-left: 20px;
-  }
-
-  .listScores {
-    width: 90%;
-    margin: 20px auto;
-  }
+.submit:hover {
+  background: #000;
+  color: #fff;
 }
+
+
+
 
 /* Chrome */
 input::-webkit-outer-spin-button,
@@ -183,4 +189,47 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: none;
+}
+
+
+@media (max-width: 768px) {
+  .crown {
+    width: 40px;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .legend ul:nth-child(2) {
+    left: 0;
+  }
+
+  .legend ul:nth-child(3) {
+    right: 0;
+  }
+
+  .formTitle {
+    margin-top: 40px;
+  }
+
+  .playerScoreList {
+    margin-right: 0;
+  }
+
+  .submit {
+    margin-bottom: 100px;
+  }
+}
+
+@keyframes BackgroundAnimation {
+  0% {
+    background-position: 0% 7%;
+  }
+  50% {
+    background-position: 100% 94%;
+  }
+  100% {
+    background-position: 0% 7%;
+  }
 }
