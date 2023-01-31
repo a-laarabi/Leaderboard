@@ -2,7 +2,7 @@
 
 # Leaderboard
 
-In this project I crated a simple website to add and remove scores. in addition to that all the scores in the to do list which are added will be saved automaticalluy to the localstorage, thus the file can be seen even if the page is reloaded.
+In this project I crated the leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
 
 In this project I have used linter for HTML and CSS and Javascript, to make sure there are no linter errors on the code.
 
@@ -33,6 +33,7 @@ To successfully utilize this project first of all you need to clone or download 
 
 👤 Anas
 - GitHub: [@a-laarabi](https://github.com/a-laarabi)
+- LinkedIn: [Laarabi](https://www.linkedin.com/in/a-laarabi/)
 
 
 ## 🤝 Contributing
