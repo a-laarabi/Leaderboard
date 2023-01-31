@@ -12,6 +12,7 @@ const profile = [profileOne, profileTwo, profileThree, userProfile];
 const names = document.querySelector('.name');
 const score = document.querySelector('.score');
 const submit = document.querySelector('.submit');
+const refresh = document.querySelector('.refresh');
 
 const legendSection = document.querySelector('.legend');
 
@@ -52,6 +53,8 @@ const listAllPlayers = async () => {
     if (i > 3) { i = 3; }
     addToDom(i, element.user, element.score);
   });
+  refresh.disabled = false;
+  refresh.innerHTML = 'Refresh';
 };
 
 submit.addEventListener('click', () => {
@@ -62,8 +65,9 @@ submit.addEventListener('click', () => {
   }
 });
 
-const refresh = document.querySelector('.refresh');
 refresh.addEventListener('click', () => {
+  refresh.disabled = true;
+  refresh.innerHTML = 'Loading...';
   listScores.innerHTML = '';
   listAllPlayers();
 });
